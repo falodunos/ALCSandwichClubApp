@@ -76,14 +76,10 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
         mTextViewMainName.setText(sandwich.getMainName());
-        String alsoKnownAs = convertListToString(sandwich.getAlsoKnownAs());
-        mAlsoKnownAs.setText( alsoKnownAs.length() > 0 ? alsoKnownAs : "N/A" );
-
+        mAlsoKnownAs.setText(convertListToString(sandwich.getAlsoKnownAs()));
         mTextViewDescription.setText(sandwich.getDescription());
-        String placeOfOrigin = sandwich.getPlaceOfOrigin();
-
-        mTextViewPlaceOfOrigin.setText(placeOfOrigin.length() > 0 ? placeOfOrigin : "N/A");
-        mTextViewIngredients.setText( convertListToString(sandwich.getIngredients()));
+        mTextViewPlaceOfOrigin.setText(sandwich.getPlaceOfOrigin());
+        mTextViewIngredients.setText(convertListToString(sandwich.getIngredients()));
     }
 
     private String convertListToString(List<String> stringList) {
